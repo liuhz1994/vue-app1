@@ -33,9 +33,12 @@ module.exports = {
       { test: /\.vue$/, use: 'vue-loader' } // 处理 .vue 文件的 loader
     ]
   },
+  devServer: { // DevServer 相关配置
+    disableHostCheck: true, //  不检查主机的应用程序,开发模式可开始
+  },
   resolve: {
     alias: { // 修改 Vue 被导入时候的包的路径
-      // "vue$": "vue/dist/vue.js"
+      "vue$": "vue/dist/vue.js"
     }
   }
 }
