@@ -25,3 +25,6 @@ import './lib/mui/css/mui.css'
 1. 导入路由的包
 2. 安装路由
 3. 导入自己的 router.js 路由模块
+
+   [Vue-Router API]([https://router.vuejs.org/zh/guide/essentials/named-views.html#%E5%B5%8C%E5%A5%97%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE](https://router.vuejs.org/zh/guide/essentials/named-views.html#嵌套命名视图))
+
