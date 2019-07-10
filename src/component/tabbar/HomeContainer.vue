@@ -64,6 +64,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 轮播图
     .mint-swipe{
         height: 200px;
 
@@ -83,7 +84,17 @@ export default {
                 height: 100%;
             }
         }
+
+        
     }
+// 首页按钮
+     .mui-grid-view.mui-grid-9{
+            background-color: #fff ;
+
+            .mui-table-view-cell{
+                border: 0;
+            }
+        }
 </style>
 
 

@@ -8,6 +8,7 @@
     <transition>
       <router-view></router-view>
     </transition>
+    
     <!-- 底部 Tabbar区域 -->
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item " to="/home">
@@ -42,21 +43,21 @@
   }
 
   .mui-grid-view.mui-grid-9{
-    background-color: #fff
+    background-color: #fff ;
   }
 
   .v-enter{
     opacity: 0;
-    transform: translate(100%);
+    transform: translateX(100%);
+    
   }
   .v-leave-to{
-      opacity: 0;
-      transform: translate(-100%);
+      opacity: 0; 
+      transform: translateX(-100%);
+      position: absolute;
   }
-
-
   .v-enter-active,
-  .v-leave-actice{
+  .v-leave-active{
     transition: all 0.5s ease;
   }
 </style>

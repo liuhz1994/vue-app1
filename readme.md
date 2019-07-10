@@ -28,3 +28,15 @@ import './lib/mui/css/mui.css'
 
    [Vue-Router API]([https://router.vuejs.org/zh/guide/essentials/named-views.html#%E5%B5%8C%E5%A5%97%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE](https://router.vuejs.org/zh/guide/essentials/named-views.html#嵌套命名视图))
 
+### 2.3 首页按钮
+
+### 2.4 组件切换的动画效果
+
+~~~vue
+1. <transition>组件</transition>
+2. v-enter,v-leave-to{opacity:0;transform:translateX(100%)}
+   v-enter-active,v-leave-active{transition:all 0.5s ease}
+~~~
+
+
+
