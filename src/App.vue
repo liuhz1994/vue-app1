@@ -5,8 +5,9 @@
 
     <!-- 中间的 路由 router-view 区域 -->
 
-    <router-view></router-view>
-
+    <transition>
+      <router-view></router-view>
+    </transition>
     <!-- 底部 Tabbar区域 -->
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item " to="/home">
@@ -37,5 +38,25 @@
 
   .app-container{
     padding-top: 40px;
+    overflow-x: hidden;
+  }
+
+  .mui-grid-view.mui-grid-9{
+    background-color: #fff
+  }
+
+  .v-enter{
+    opacity: 0;
+    transform: translate(100%);
+  }
+  .v-leave-to{
+      opacity: 0;
+      transform: translate(-100%);
+  }
+
+
+  .v-enter-active,
+  .v-leave-actice{
+    transition: all 0.5s ease;
   }
 </style>
