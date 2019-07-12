@@ -41,7 +41,7 @@ export default {
     },
     methods:{
         getLunbotu(){
-            this.$http.get('http://localhost:3001/api/getlunbo').then(res =>{
+            this.$http.get('api/getlunbo').then(res =>{
                 
         
                 var json = res.body;
