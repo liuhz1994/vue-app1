@@ -2,11 +2,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';//导入路由
 import VueResource from 'vue-resource';
-import { Header,Swipe, SwipeItem  } from 'mint-ui';
+import { Header,Swipe, SwipeItem,Button   } from 'mint-ui';
 
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(SwipeItem.name, SwipeItem,);
+Vue.component(Button.name, Button,);
 
 Vue.use(VueRouter);//使用路由
 Vue.use(VueResource)//使用资源访问

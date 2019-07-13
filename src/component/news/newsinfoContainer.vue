@@ -9,11 +9,18 @@
         <div class="content" v-html="newsinfo.content">
            
         </div>
+        <!-- 评论组件 -->
+        <comment :newid="id"></comment>
     </div>
 </template>
 <script>
 
+import comment from '../subcomponents/comment.vue'
+
 export default {
+    components:{
+        comment
+    },
     data:function(){
         return{
             id:this.$route.params.id,

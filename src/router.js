@@ -7,6 +7,7 @@ import SearchContainer from './component/tabbar/SearchContainer.vue'
 import newListContainer from './component/news/newsListContainer.vue'
 import newsinfoContainer from './component/news/newsinfoContainer.vue'
 
+
 // 3. 创建路由对象
 var router = new VueRouter({//配置路由对象
   routes: [
