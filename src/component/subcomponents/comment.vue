@@ -1,12 +1,12 @@
 <template>
   <div>
     <textarea  cols="30" rows="3" placeholder="请输入你的评论" v-model="curComment"></textarea>
-    <mt-button type="primary" plain size="large">发表评论</mt-button>
+    <mt-button type="primary" plain size="large" @click="postComment">发表评论</mt-button>
 
     <!-- 评论列表 -->
     <div class="cmt-list">
       <div class="cmt-item" v-for="(comment,index) in commentList" :key="comment.id">
-        <div class="cmt-title">第{{++index}}楼 用户：{{comment.user_name}} 发表时间：{{comment.add_time}}</div>
+        <div class="cmt-title">第{{++index}}楼 用户：{{comment.user_name}} 发表时间：{{comment.add_time | timeFormart}}</div>
         <div class="cmt-content">{{comment.content}}</div>
       </div>
     </div>
@@ -46,11 +46,8 @@ export default {
           result => {
             
             var commentList = result.body.datas;
-            console.log("获取更多成功,"+commentList.length);
-            console.log(this.commentList.length);
             this.commentList = this.commentList.concat(commentList) ;
-            console.log(this.commentList.length);
-            console.log(this.commentList.length)
+        
           },
           error => {}
         );
@@ -59,7 +56,22 @@ export default {
     //1.提交当前评论
     //2.提交成功后,给出成功提示,并显示最新评论
     postComment:function(){
-        //this.$http.post('api/postcomment/'+newid +"")
+        //post请求有三个参数
+       
+        this.$http.post('api/postcomment/'+this.newid,{comment:this.curComment},{emulateJSON:true})
+        .then(result=>{
+            console.log("评论成功");
+            var newComment = {
+                user_name:"新用户",
+                add_time:Date.now(),
+                content:this.curComment.trim()
+            }
+            console.log(this.curComment.trim())
+            this.commentList.unshift(newComment);
+            this.curComment = '';
+        },error=>{
+            console.log(error)
+        })
     }
   },
   created: function() {
