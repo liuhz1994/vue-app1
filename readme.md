@@ -67,8 +67,52 @@ npm i moment -S //日期处理类库
 Vue.http.options.root //设置全局
 ~~~
 
-
-
 #### 2.5.6 获取并渲染新闻详情数据
 
-####  
+#### 2.5.7 绘制评论子组件的样式
+
+~~~
+添加子组件的过程：
+1.先创建一个单独的 comment.vue 组件模版
+2.在需要使用 comment 组件的页面,导入 comment 组件
+3.在父组件中，使用 components 属性 ，将导入的子组件 注册为自己的子组件
+4.以标签的形式，在页面中应用
+~~~
+
+~~~
+子组件间值的传递：
+1.<comment fid="f_id"></comment>
+2.子组件实例中{props:['fid']}
+3.直接使用{{this.fid}}
+~~~
+
+#### 2.5.8 加载首页评论内容
+
+#### 2.5.9 完成评论数据的点击加载更多功能
+
+#### 2.5.10 完成评论的功能
+
+~~~
+vue-resources POST传参：
+第一个参数为 请求的url地址
+第二个参数为 提交给服务器的数据对象{}
+第三个参数为 表单中数据的格式//{emulateJSON:true}
+~~~
+
+
+
+### 2.6 图片组件
+
+#### 2.6.1 改造图片分析按钮为路由的链接 并 显示对应的组件页面
+
+#### 2.6.2 图片列表顶部导航条的制作
+
+~~~
+1.移除严格模式
+2.chrome提高页面的滑动流程度
+  *{touch-action: pan-y;}
+~~~
+
+[babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
+
+#### 2.6.3 渲染分类列表的数据

@@ -12,6 +12,7 @@ Vue.component(Button.name, Button,);
 Vue.use(VueRouter);//使用路由
 Vue.use(VueResource)//使用资源访问
 
+//Vue.http.options.root = 'http://192.168.0.102:3001';
 Vue.http.options.root = 'http://localhost:3001';
 
 import './lib/mui/css/mui.css'

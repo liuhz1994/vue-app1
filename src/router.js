@@ -7,6 +7,7 @@ import SearchContainer from './component/tabbar/SearchContainer.vue'
 import newListContainer from './component/news/newsListContainer.vue'
 import newsinfoContainer from './component/news/newsinfoContainer.vue'
 
+import picturelistContainer from './component/picture/picturelist.vue'
 
 // 3. 创建路由对象
 var router = new VueRouter({//配置路由对象
@@ -18,6 +19,8 @@ var router = new VueRouter({//配置路由对象
     {path:'/search',component:SearchContainer},
     {path:'/home/newslist',component:newListContainer},
     {path:'/home/newsinfo/:id',component:newsinfoContainer},
+    //图片组件
+    {path:'/home/picturelist',component:picturelistContainer},
   ],
   linkActiveClass:'mui-active',
  
