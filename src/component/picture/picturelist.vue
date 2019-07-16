@@ -4,7 +4,8 @@
 				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<div class="mui-scroll">
                         
-						<a v-for="cat in categoryList" :key="cat.id" :class="['mui-control-item',cat.id == 0?'mui-active':'']" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+						<a v-for="cat in categoryList" :key="cat.id" :class="['mui-control-item',cat.id == 0?'mui-active':'']" 
+                        href="#item1mobile" data-wid="tab-top-subpage-1.html" @click="getImageslist(cat.id)">
 							{{cat.title}}
 						</a>
 		
@@ -14,16 +15,15 @@
 			</div>
 
             <!-- 图片列表 -->
-            <div class="picturelist">
-                <div class="pictureitem">
-                    <div class="content">
-                    <img src="https://ossweb-img.qq.com/images/lol/web201310/skin/big266000.jpg" alt="">
-                    
-                        <div class="title">aa</div>
-                        <div class="zhaoyao">aa</div>
+            <ul class="picturelist">
+                <router-link  class="pictureitem" v-for="item in imageslist" :key="item.id" :to='"/home/pictureinfo/"+item.id' tag="li">
+                    <img v-lazy="item.img_url">
+                    <div class="info">
+                        <h4>{{item.title}}</h4>
+                        <div class="info-content">{{item.zhaiyao}}</div>
                     </div>
-                </div>
-            </div>
+                </router-link>
+            </ul>
     </div>
 </template>
 <script>
@@ -38,6 +38,7 @@ export default {
         return{
             categoryList:'',
             itemIndex:0,
+            imageslist:'',
         }
     },
     methods:{
@@ -54,10 +55,19 @@ export default {
             },error =>{
                 console.log(error);
             })
+        },
+        getImageslist:function(cateid){
+            this.$http.get('api/getimages/'+cateid)
+            .then(result => {
+                this.imageslist = result.body.message
+            },err =>{
+                console.log(err);
+            })
         }
     },
     created:function(){
         this.getCategory();
+        this.getImageslist(0);
     },
     mounted:function(){
         mui('.mui-scroll-wrapper').scroll({
@@ -67,10 +77,49 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  .picturelist{
+    ul li{
+        list-style: none;
+    }
+
+  .picturelist{     
+      padding:0 10px;
      
-      padding: 0 10px;
-      
-      
+
+      .pictureitem{
+        background-color: gainsboro;
+        text-align: center;
+        margin-bottom: 10px;
+        box-shadow: 0 0 9px #999;
+        position: relative;
+        
+        img{
+            width: 100%;
+            vertical-align: middle;
+            
+        }
+        .info{
+            position: absolute;
+            bottom:0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.4);
+            max-height: 84px;
+            color:#fff;
+            text-align: left;
+            padding-left: 5px;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        // 懒加载图片
+        img[lazy=loading] {
+            width: 40px;
+            height: 250px;
+            margin: auto;
+        }
+
+        
+      }    
   }
+
+  
 </style>

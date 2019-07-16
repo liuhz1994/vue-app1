@@ -45,6 +45,10 @@
     padding-top: 40px;
     overflow-x: hidden;
     padding-bottom: 50px;
+
+    .mint-header{
+      z-index: 99;
+    }
   }
 
  

@@ -8,6 +8,7 @@ import newListContainer from './component/news/newsListContainer.vue'
 import newsinfoContainer from './component/news/newsinfoContainer.vue'
 
 import picturelistContainer from './component/picture/picturelist.vue'
+import pictureinfoContainer from './component/picture/pictureinfo.vue'
 
 // 3. 创建路由对象
 var router = new VueRouter({//配置路由对象
@@ -21,6 +22,7 @@ var router = new VueRouter({//配置路由对象
     {path:'/home/newsinfo/:id',component:newsinfoContainer},
     //图片组件
     {path:'/home/picturelist',component:picturelistContainer},
+    {path:'/home/pictureinfo/:imgid',component:pictureinfoContainer},
   ],
   linkActiveClass:'mui-active',
  

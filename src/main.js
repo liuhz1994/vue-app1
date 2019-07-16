@@ -2,15 +2,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';//导入路由
 import VueResource from 'vue-resource';
-import { Header,Swipe, SwipeItem,Button   } from 'mint-ui';
+// import { Header,Swipe, SwipeItem,Button,Lazyload    } from 'mint-ui';
 
-Vue.component(Header.name, Header);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem,);
-Vue.component(Button.name, Button,);
+// Vue.component(Header.name, Header);
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem,);
+// Vue.component(Button.name, Button,);
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css'
 
 Vue.use(VueRouter);//使用路由
-Vue.use(VueResource)//使用资源访问
+Vue.use(VueResource)//使用资源访问 
+Vue.use(MintUI)//使用资源访问
 
 //Vue.http.options.root = 'http://192.168.0.102:3001';
 Vue.http.options.root = 'http://localhost:3001';
