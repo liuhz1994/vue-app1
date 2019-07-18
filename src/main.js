@@ -2,6 +2,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';//导入路由
 import VueResource from 'vue-resource';
+import VuePreview from 'vue-preview';
 // import { Header,Swipe, SwipeItem,Button,Lazyload    } from 'mint-ui';
 
 // Vue.component(Header.name, Header);
@@ -14,6 +15,7 @@ import 'mint-ui/lib/style.css'
 Vue.use(VueRouter);//使用路由
 Vue.use(VueResource)//使用资源访问 
 Vue.use(MintUI)//使用资源访问
+Vue.use(VuePreview)//使用图片缩略图
 
 //Vue.http.options.root = 'http://192.168.0.102:3001';
 Vue.http.options.root = 'http://localhost:3001';
